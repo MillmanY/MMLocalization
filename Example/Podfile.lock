@@ -1,0 +1,14 @@
+PODS:
+  - MMLocalization (0.1.0)
+
+DEPENDENCIES:
+  - MMLocalization (from `../`)
+
+EXTERNAL SOURCES:
+  MMLocalization:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  MMLocalization: 613c5822339a5af0960024091ad9326a6af34369
+
+COCOAPODS: 0.39.0

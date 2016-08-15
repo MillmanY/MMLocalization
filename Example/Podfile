@@ -2,10 +2,4 @@ use_frameworks!
 
 target 'MMLocalization_Example' do
   pod 'MMLocalization', :path => '../'
-
-  target 'MMLocalization_Tests' do
-    inherit! :search_paths
-
-    
-  end
 end

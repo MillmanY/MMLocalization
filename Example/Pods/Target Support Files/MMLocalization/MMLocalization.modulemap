@@ -1,0 +1,6 @@
+framework module MMLocalization {
+  umbrella header "MMLocalization-umbrella.h"
+
+  export *
+  module * { export * }
+}
