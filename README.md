@@ -20,6 +20,10 @@ Step
 
 ![circledemo](https://github.com/MillmanY/MMLocalization/blob/master/string.png)
 
+Generate your file convenience you can use
+
+https://github.com/MillmanY/Localize-String-Help
+
 2.Setting your string table at didFinishLaunchingWithOptions
 
 ![circledemo](https://github.com/MillmanY/MMLocalization/blob/master/setting.png)
