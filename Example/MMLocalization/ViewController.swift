@@ -12,10 +12,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = localString("log_in")
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.title = localString("log_in")
+    }
     @IBAction func chooseLanguage() {
         self.performSegueWithIdentifier("SelectLanguage", sender: nil)
     }
