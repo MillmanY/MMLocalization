@@ -16,6 +16,7 @@ It's help you to change localization string easily
 ![circledemo](https://github.com/MillmanY/MMLocalization/blob/master/mid.gif)
 
 Step
+
 1.Import your table.string file
 
 ![circledemo](https://github.com/MillmanY/MMLocalization/blob/master/string.png)
