@@ -11,6 +11,31 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
+It's help your to change localization string easily
+
+![circledemo](https://github.com/MillmanY/MMLocalization/blob/master/mid.gif)
+
+Step
+1.Import your table.string file
+
+![circledemo](https://github.com/MillmanY/MMLocalization/blob/master/string.png)
+
+Generate your file convenience you can use
+
+https://github.com/MillmanY/Localize-String-Help
+
+2.Setting your string table at didFinishLaunchingWithOptions
+
+![circledemo](https://github.com/MillmanY/MMLocalization/blob/master/setting.png)
+
+3.Just setting your key on your UI
+
+![circledemo](https://github.com/MillmanY/MMLocalization/blob/master/ui.png)
+
+4.If your want to set up your string by program , your can use 
+
+  localString("log_in")
+
 ## Installation
 
 MMLocalization is available through [CocoaPods](http://cocoapods.org). To install
