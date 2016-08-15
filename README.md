@@ -11,7 +11,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
-It's help your to change localization string easily
+It's help you to change localization string easily
 
 ![circledemo](https://github.com/MillmanY/MMLocalization/blob/master/mid.gif)
 
@@ -32,7 +32,7 @@ https://github.com/MillmanY/Localize-String-Help
 
 ![circledemo](https://github.com/MillmanY/MMLocalization/blob/master/ui.png)
 
-4.If your want to set up your string by program , your can use 
+4.If you want to set up your string by program , your can use 
 
   localString("log_in")
 
