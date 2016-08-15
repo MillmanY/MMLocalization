@@ -7,11 +7,12 @@
 //
 
 import UIKit
-
+import MMLocalization
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = localString("log_in")
         // Do any additional setup after loading the view, typically from a nib.
     }
     
