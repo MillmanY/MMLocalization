@@ -26,10 +26,10 @@ class ChooseLanguageTableViewController: UITableViewController {
     }
     
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         var string = ""
-        switch indexPath.row {
+        switch (indexPath as NSIndexPath).row {
             case 0:
                 string = "ILocalizable_CH"
             case 1:
@@ -42,7 +42,7 @@ class ChooseLanguageTableViewController: UITableViewController {
         MMLocalization.setLocalizedStrinbTable(string)
         MMLocalization.save()
         
-        self.navigationController?.popViewControllerAnimated(true)
+        self.navigationController?.popViewController(animated: true)
 
     }
 

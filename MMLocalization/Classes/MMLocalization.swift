@@ -8,7 +8,7 @@
 
 import UIKit
 let TableName = "LocalizationTable"
-public func localString(str:String) -> String {
+public func localString(_ str:String) -> String {
     if let tableName = MMLocalization.shareInstance.tableName {
         return (str.isEmpty) ? str :  NSLocalizedString(str, tableName:tableName, comment: "")
     } else {
@@ -17,23 +17,23 @@ public func localString(str:String) -> String {
     }
 }
 
-public class MMLocalization: NSObject {
+open class MMLocalization: NSObject {
     var tableName:String?
     static let shareInstance = MMLocalization()
     
-    public static func loadSetting() -> Bool {
-        if let table = NSUserDefaults.standardUserDefaults().valueForKey(TableName) as? String{
+    open static func loadSetting() -> Bool {
+        if let table = UserDefaults.standard.value(forKey: TableName) as? String{
             MMLocalization.shareInstance.tableName = table
             return true
         }
         return false
     }
     
-    public static func setLocalizedStrinbTable(tableName:String) {
+    open static func setLocalizedStrinbTable(_ tableName:String) {
         MMLocalization.shareInstance.tableName = tableName
     }
     
-    public static func save() {
-        NSUserDefaults.standardUserDefaults().setValue(MMLocalization.shareInstance.tableName, forKey: TableName)
+    open static func save() {
+        UserDefaults.standard.setValue(MMLocalization.shareInstance.tableName, forKey: TableName)
     }
 }

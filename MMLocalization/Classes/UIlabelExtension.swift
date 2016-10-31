@@ -11,7 +11,7 @@ private var ChangeKey = "ChangeAllText"
 private var originalKey = "TextKey"
 public extension UILabel {
     
-    private var textKey:String? {
+    fileprivate var textKey:String? {
         set {
             objc_setAssociatedObject(self, &originalKey, newValue, .OBJC_ASSOCIATION_RETAIN)
         } get {
@@ -23,23 +23,20 @@ public extension UILabel {
         }
     }
     
-    public override class func initialize() {
+    open override class func initialize() {
         
         struct Static {
-            static var token: dispatch_once_t = 0
+            static var token: Int = 0
         }
         
         if self !== UILabel.self {
             return
         }
-        
-        dispatch_once(&Static.token){
-            self.replaceSetText()
-        }
+        self.replaceSetText()
     }
     
     static func replaceSetText(){
-        let originalSelector = Selector("setText:")
+        let originalSelector = #selector(setter: UILabel.text)
         let swizzledSelector = #selector(UILabel.customSetText(_:))
         
         let originalMethod = class_getInstanceMethod(self, originalSelector)
@@ -54,14 +51,14 @@ public extension UILabel {
         }
     }
     
-    public override func awakeFromNib() {
+    open override func awakeFromNib() {
         super.awakeFromNib()
         textKey = self.text
 
         if let att = self.attributedText{
             let attribue = NSMutableAttributedString(string: localString(att.string))
             let length = (attribue.length < att.length) ? attribue.length :att.length
-            att.enumerateAttributesInRange(NSMakeRange(0, length), options: .LongestEffectiveRangeNotRequired, usingBlock: { (obj, range, stop) in
+            att.enumerateAttributes(in: NSMakeRange(0, length), options: .longestEffectiveRangeNotRequired, using: { (obj, range, stop) in
                 
                 attribue.addAttributes(obj, range: range)
             })
@@ -71,13 +68,13 @@ public extension UILabel {
         }
     }
     
-    public override func didMoveToWindow() {
+    open override func didMoveToWindow() {
         if let key = self.textKey {
             self.text = key
         }
     }
     
-    func customSetText(t: String) {
+    func customSetText(_ t: String) {
         let text = localString(t)
         if text != self.text {
             textKey = t
@@ -86,15 +83,15 @@ public extension UILabel {
         }
     }
     
-    private func resetWidth() {
+    fileprivate func resetWidth() {
         var frame = self.frame
         frame.size.width = self.calculateWidth()
         self.frame = frame
     }
     
-    private func calculateWidth() -> CGFloat {
-        let currentWidth = CGRectGetWidth(self.frame)
-        let fixWidth = self.intrinsicContentSize().width
+    fileprivate func calculateWidth() -> CGFloat {
+        let currentWidth = self.frame.width
+        let fixWidth = self.intrinsicContentSize.width
         return (currentWidth > fixWidth) ? currentWidth : fixWidth
     }
 }

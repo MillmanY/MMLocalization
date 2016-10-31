@@ -15,11 +15,11 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         self.title = localString("log_in")
     }
     @IBAction func chooseLanguage() {
-        self.performSegueWithIdentifier("SelectLanguage", sender: nil)
+        self.performSegue(withIdentifier: "SelectLanguage", sender: nil)
     }
 
     override func didReceiveMemoryWarning() {
