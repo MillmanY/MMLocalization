@@ -35,7 +35,8 @@ https://github.com/MillmanY/Localize-String-Help
 
 4.If you want to set up your string by program , your can use 
 
-  localString("log_in")
+     "log_in".localize()       
+     "log_in".localize(table:"ILocalizable_ID")
 
 ## Installation
 
