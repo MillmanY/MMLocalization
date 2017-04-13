@@ -10,6 +10,7 @@
 		0817C05512A02E0AC79C1A48FD7FB744 /* MMLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4242603B18E0FFD36AD526E15D78699 /* MMLocalization.swift */; };
 		4DDA15296306975A9214E592D5AECC40 /* MMLocalization-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A0727757834C7C3BFF4615D332ADA9B9 /* MMLocalization-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		52C544CD1C76C82EA9999561EC419640 /* MMLocalization-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6CC848FF8411D5477472A7AD2B5548 /* MMLocalization-dummy.m */; };
+		5E1BEF451E9F898A00789EC5 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1BEF441E9F898A00789EC5 /* StringExtension.swift */; };
 		6FAE18B7FA4949F0E61C43D6271BD38D /* Pods-MMLocalization_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB345BBBBC0B2CBD620149F00B4E25F /* Pods-MMLocalization_Example-dummy.m */; };
 		853A9F2DB773F79B47E5887E046CCC68 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		8EA7D838300C58F2F7FE1838BE821759 /* Pods-MMLocalization_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BC19189EAF4E472AF1FB6296ADA4C1E /* Pods-MMLocalization_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -36,6 +37,7 @@
 		4BEB0623A48495ACBCD85CF88860CEAA /* UIlabelExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIlabelExtension.swift; sourceTree = "<group>"; };
 		4C482E6026A1108DB8D9F6A3E80D98C1 /* Pods-MMLocalization_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MMLocalization_Example.modulemap"; sourceTree = "<group>"; };
 		534A0EC1945F02573AA9EC003795BE69 /* Pods-MMLocalization_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MMLocalization_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		5E1BEF441E9F898A00789EC5 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		608280EB8AF78EC3B678E54F3F6A11F4 /* MMLocalization.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MMLocalization.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BF805E4EA8B3203A028C0AFDE0A9ED3 /* Pods-MMLocalization_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MMLocalization_Example.release.xcconfig"; sourceTree = "<group>"; };
 		8272160C3C112C2CD784B0C137ACC1C1 /* MMLocalization-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MMLocalization-prefix.pch"; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			children = (
 				C4242603B18E0FFD36AD526E15D78699 /* MMLocalization.swift */,
 				4BEB0623A48495ACBCD85CF88860CEAA /* UIlabelExtension.swift */,
+				5E1BEF441E9F898A00789EC5 /* StringExtension.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E1BEF451E9F898A00789EC5 /* StringExtension.swift in Sources */,
 				52C544CD1C76C82EA9999561EC419640 /* MMLocalization-dummy.m in Sources */,
 				0817C05512A02E0AC79C1A48FD7FB744 /* MMLocalization.swift in Sources */,
 				F61B0C77F62B5788368CF49D1A278AD1 /* UIlabelExtension.swift in Sources */,

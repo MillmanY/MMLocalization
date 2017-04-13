@@ -24,12 +24,8 @@ public extension UILabel {
     }
     
     open override class func initialize() {
-        
-        struct Static {
-            static var token: Int = 0
-        }
-        
-        if self !== UILabel.self {
+
+        if self != UILabel.self {
             return
         }
         self.replaceSetText()
@@ -56,7 +52,7 @@ public extension UILabel {
         textKey = self.text
 
         if let att = self.attributedText{
-            let attribue = NSMutableAttributedString(string: localString(att.string))
+            let attribue = NSMutableAttributedString(string: att.string.localize())
             let length = (attribue.length < att.length) ? attribue.length :att.length
             att.enumerateAttributes(in: NSMakeRange(0, length), options: .longestEffectiveRangeNotRequired, using: { (obj, range, stop) in
                 
@@ -75,7 +71,7 @@ public extension UILabel {
     }
     
     func customSetText(_ t: String) {
-        let text = localString(t)
+        let text = t.localize()
         if text != self.text {
             textKey = t
             self.customSetText(text)
@@ -94,6 +90,8 @@ public extension UILabel {
         let fixWidth = self.intrinsicContentSize.width
         return (currentWidth > fixWidth) ? currentWidth : fixWidth
     }
+
+   
 }
 
 

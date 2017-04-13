@@ -8,14 +8,6 @@
 
 import UIKit
 let TableName = "LocalizationTable"
-public func localString(_ str:String) -> String {
-    if let tableName = MMLocalization.shareInstance.tableName {
-        return (str.isEmpty) ? str :  NSLocalizedString(str, tableName:tableName, comment: "")
-    } else {
-        // If you didn't setting your table return original string
-        return str
-    }
-}
 
 open class MMLocalization: NSObject {
     var tableName:String?
