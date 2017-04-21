@@ -13,7 +13,9 @@ public extension UILabel {
     
     fileprivate var textKey:String? {
         set {
-            objc_setAssociatedObject(self, &originalKey, newValue, .OBJC_ASSOCIATION_RETAIN)
+            if newValue != nil && textKey == nil {
+                objc_setAssociatedObject(self, &originalKey, newValue, .OBJC_ASSOCIATION_RETAIN)
+            }
         } get {
             if let key = objc_getAssociatedObject(self, &originalKey) as? String {
                 return key
@@ -23,18 +25,9 @@ public extension UILabel {
         }
     }
     
-    open override class func initialize() {
-
-        if self != UILabel.self {
-            return
-        }
-        self.replaceSetText()
-    }
-    
     static func replaceSetText(){
         let originalSelector = #selector(setter: UILabel.text)
         let swizzledSelector = #selector(UILabel.customSetText(_:))
-        
         let originalMethod = class_getInstanceMethod(self, originalSelector)
         let swizzledMethod = class_getInstanceMethod(self, swizzledSelector)
         
@@ -50,7 +43,6 @@ public extension UILabel {
     open override func awakeFromNib() {
         super.awakeFromNib()
         textKey = self.text
-
         if let att = self.attributedText{
             let attribue = NSMutableAttributedString(string: att.string.localize())
             let length = (attribue.length < att.length) ? attribue.length :att.length
@@ -60,38 +52,29 @@ public extension UILabel {
             })
             self.attributedText = attribue
         } else {
-            self.text = (text)
+            let t = self.text
+            self.text = (t)
         }
     }
     
     open override func didMoveToWindow() {
+        self.textKey = self.text
         if let key = self.textKey {
             self.text = key
         }
     }
     
-    func customSetText(_ t: String) {
-        let text = t.localize()
-        if text != self.text {
-            textKey = t
-            self.customSetText(text)
-            self.resetWidth()
+    func customSetText(_ input: String?) {
+        if let t = input {
+            let text = t.localize()
+            if text != self.text {
+                self.textKey = t
+                self.customSetText(text)
+                self.sizeToFit()
+            }
+        } else if input == nil && self.text != nil{
+            self.customSetText(nil)
         }
     }
-    
-    fileprivate func resetWidth() {
-        var frame = self.frame
-        frame.size.width = self.calculateWidth()
-        self.frame = frame
-    }
-    
-    fileprivate func calculateWidth() -> CGFloat {
-        let currentWidth = self.frame.width
-        let fixWidth = self.intrinsicContentSize.width
-        return (currentWidth > fixWidth) ? currentWidth : fixWidth
-    }
-
-   
 }
-
 

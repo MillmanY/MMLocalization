@@ -24,9 +24,7 @@ public extension String {
         return self.localizeWith(value: self, table: table)
     }
     
-    
     private func localizeWith(value:String ,table:String) -> String {
         return (self.isEmpty) ? self :  NSLocalizedString(self, tableName:table, comment: "")
     }
-    
 }

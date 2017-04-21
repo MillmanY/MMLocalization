@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.title = "log_in".localize()
+        self.title = "log_in"
     }
     @IBAction func chooseLanguage() {
         self.performSegue(withIdentifier: "SelectLanguage", sender: nil)
