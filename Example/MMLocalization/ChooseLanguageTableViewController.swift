@@ -38,9 +38,7 @@ class ChooseLanguageTableViewController: UITableViewController {
                 string = "ILocalizable_ID"
             default: break
         }
-        
-        MMLocalization.setLocalizedStrinbTable(string)
-        MMLocalization.save()
+        MMLocalization.set(type: .custom(tableName: string))
         
         self.navigationController?.popViewController(animated: true)
 

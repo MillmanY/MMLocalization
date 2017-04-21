@@ -1,0 +1,14 @@
+/* 
+  Localizable.string.strings
+  MMLocalization
+
+  Created by Millman YANG on 2017/4/21.
+  Copyright © 2017年 CocoaPods. All rights reserved.
+*/
+
+"welcome" = "歡迎";
+"choose_language" = "選擇語言";
+"log_in" = "登入~";
+"account" = "帳號";
+"password" = "密碼";
+"confirm" = "確認";

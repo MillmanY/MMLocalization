@@ -11,11 +11,12 @@ import Foundation
 public extension String {
     
     public func localize() -> String {
-        
-        if let tableName = MMLocalization.shareInstance.tableName {
+        switch MMLocalization.shared.type {
+        case .system:
+            return NSLocalizedString(self, comment: "")
+        case .custom(let tableName):
             return self.localizeWith(value: self, table: tableName)
-        } else {
-            // If you didn't setting your table return original string
+        default:
             return self
         }
     }

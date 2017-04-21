@@ -8,24 +8,36 @@
 
 import UIKit
 let TableName = "LocalizationTable"
+public enum TableType {
+    case system
+    case custom(tableName:String)
+}
 
 open class MMLocalization: NSObject {
-    var tableName:String?
-    static let shareInstance = MMLocalization()
+    var type:TableType = .system {
+        didSet {
+            switch type {
+            case .custom(let tableName):
+                UserDefaults.standard.setValue(tableName, forKey: TableName)
+            default:
+                UserDefaults.standard.removeObject(forKey: TableName)
+            }
+            UserDefaults.standard.synchronize()
+        }
+    }
+    
+    static let shared = MMLocalization()
+    
+    open static func set(type:TableType) {
+        MMLocalization.shared.type = type
+    }
     
     open static func loadSetting() -> Bool {
-        if let table = UserDefaults.standard.value(forKey: TableName) as? String{
-            MMLocalization.shareInstance.tableName = table
+        if let tableName = UserDefaults.standard.value(forKey: TableName) as? String{
+        
+            MMLocalization.shared.type = .custom(tableName: tableName)
             return true
         }
         return false
-    }
-    
-    open static func setLocalizedStrinbTable(_ tableName:String) {
-        MMLocalization.shareInstance.tableName = tableName
-    }
-    
-    open static func save() {
-        UserDefaults.standard.setValue(MMLocalization.shareInstance.tableName, forKey: TableName)
     }
 }

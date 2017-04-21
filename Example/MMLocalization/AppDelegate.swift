@@ -16,13 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let scuess =  MMLocalization.loadSetting()
+//        let scuess =  MMLocalization.loadSetting()
+//
+//        if !scuess {
+//            MMLocalization.set(type: .custom(tableName: "ILocalizable_CH"))
+//        }
+//        
 
-        if !scuess {
-            MMLocalization.setLocalizedStrinbTable("ILocalizable_CH")
-            MMLocalization.save()
-        }
-        
         return true
     }
 
