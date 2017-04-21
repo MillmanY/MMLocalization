@@ -13,9 +13,7 @@ public extension UILabel {
     
     fileprivate var textKey:String? {
         set {
-            if newValue != nil && textKey == nil {
-                objc_setAssociatedObject(self, &originalKey, newValue, .OBJC_ASSOCIATION_RETAIN)
-            }
+            objc_setAssociatedObject(self, &originalKey, newValue, .OBJC_ASSOCIATION_RETAIN)
         } get {
             if let key = objc_getAssociatedObject(self, &originalKey) as? String {
                 return key
@@ -42,7 +40,10 @@ public extension UILabel {
     
     open override func awakeFromNib() {
         super.awakeFromNib()
-        textKey = self.text
+        
+        if let key = self.text , !key.isEmpty {
+            textKey = self.text
+        }
         if let att = self.attributedText{
             let attribue = NSMutableAttributedString(string: att.string.localize())
             let length = (attribue.length < att.length) ? attribue.length :att.length
@@ -58,18 +59,28 @@ public extension UILabel {
     }
     
     open override func didMoveToWindow() {
-        self.textKey = self.text
+        if let l = self.text?.localize() , l != self.text {
+            self.textKey = self.text
+        }
+        
         if let key = self.textKey {
             self.text = key
         }
     }
     
     func customSetText(_ input: String?) {
+        
         if let t = input {
-            let text = t.localize()
-            if text != self.text {
-                self.textKey = t
-                self.customSetText(text)
+            let local = t.localize()
+            // original == local setText
+            if local == t {
+               self.customSetText(local)
+            } else if local != self.text {
+                
+                if local != t {
+                    self.textKey = t
+                }
+                self.customSetText(local)
                 self.sizeToFit()
             }
         } else if input == nil && self.text != nil{
