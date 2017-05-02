@@ -11,15 +11,14 @@ public extension UILabel {
     fileprivate var textKey:String? {
         set {
             
-            guard let n = newValue , !defaultValue.contains(n) else {
+            if let original = textKey , !defaultValue.contains(original) {
                 return
             }
             
-            if let t = textKey , !defaultValue.contains(t) {
-                return
+            if let new = newValue , !defaultValue.contains(new) {
+                objc_setAssociatedObject(self, &originalKey, newValue, .OBJC_ASSOCIATION_RETAIN)
             }
-            
-            objc_setAssociatedObject(self, &originalKey, newValue, .OBJC_ASSOCIATION_RETAIN)
+
         } get {
             if let key = objc_getAssociatedObject(self, &originalKey) as? String {
                 return key
