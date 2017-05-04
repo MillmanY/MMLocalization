@@ -10,13 +10,9 @@ public extension UILabel {
     
     fileprivate var textKey:String? {
         set {
-            
-            if let original = textKey , !defaultValue.contains(original) {
-                return
-            }
-            
-            if let new = newValue , !defaultValue.contains(new)  , new != new.localize() {
-                objc_setAssociatedObject(self, &originalKey, new, .OBJC_ASSOCIATION_RETAIN)
+            if let new = newValue , !defaultValue.contains(new)   {
+                let key = (new != new.localize() ) ? new : nil
+                objc_setAssociatedObject(self, &originalKey, key, .OBJC_ASSOCIATION_RETAIN)
             }
         } get {
             if let key = objc_getAssociatedObject(self, &originalKey) as? String {
@@ -53,8 +49,6 @@ public extension UILabel {
                 
                 attribue.addAttributes(obj, range: range)
             })
-            
-            
             self.attributedText = attribue
         } else {
             let t = self.text
@@ -63,31 +57,25 @@ public extension UILabel {
     }
     
     open override func didMoveToWindow() {
-        self.textKey = self.text
-        
         if let key = self.textKey {
             self.text = key
+        } else if let t = self.text , !t.isEmpty , t != t.localize() {
+            self.text = t
         }
     }
     
     func customSetText(_ input: String?) {
-        
         if let t = input {
-            
             let local = t.localize()
-            // original == local setText
-            if local == t {
-                self.textKey = t
-                self.customSetText(local)
-            } else if local != self.text {
-                
-                if local != t {
-                    self.textKey = t
-                }
-                self.customSetText(local)
+            let needResize = (local != self.text && self.text != nil)
+            self.textKey = t
+            self.customSetText(local)
+            
+            if needResize {
                 self.sizeToFit()
             }
         } else if input == nil && self.text != nil{
+            self.textKey = nil
             self.customSetText(nil)
         }
     }
