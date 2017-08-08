@@ -68,7 +68,7 @@ public extension UILabel {
         if let t = input {
             let local = t.localize()
             self.textKey = t
-            let needResize = (local != self.text && self.text != nil && local != t && self.textKey != nil)
+            let needResize = (local != self.text && self.text != nil && local != t && self.textKey != nil && self.constraints.count == 0)
             self.customSetText(local)
             
             if needResize {
