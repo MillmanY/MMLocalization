@@ -16,8 +16,6 @@ public extension String {
             return NSLocalizedString(self, comment: "")
         case .custom(let tableName):
             return self.localizeWith(value: self, table: tableName)
-        default:
-            return self
         }
     }
     

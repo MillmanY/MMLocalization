@@ -6,13 +6,17 @@ import UIKit
 private var ChangeKey = "ChangeAllText"
 private var originalKey = "TextKey"
 private var defaultValue = ["Label",""]
-public extension UILabel {
+extension UILabel {
     
     fileprivate var textKey:String? {
         set {
             if let new = newValue , !defaultValue.contains(new)   {
                 let key = (new != new.localize() ) ? new : nil
                 objc_setAssociatedObject(self, &originalKey, key, .OBJC_ASSOCIATION_RETAIN)
+            }
+            
+            if newValue == nil {
+                objc_setAssociatedObject(self, &originalKey, nil, .OBJC_ASSOCIATION_RETAIN)
             }
         } get {
             if let key = objc_getAssociatedObject(self, &originalKey) as? String {
@@ -24,23 +28,21 @@ public extension UILabel {
     }
     
     static func replaceSetText(){
-        let originalSelector = #selector(setter: UILabel.text)
-        let swizzledSelector = #selector(UILabel.customSetText(_:))
-        let originalMethod = class_getInstanceMethod(self, originalSelector)
-        let swizzledMethod = class_getInstanceMethod(self, swizzledSelector)
+        var originalSelector = #selector(setter: UILabel.text)
+        var swizzledSelector = #selector(UILabel.customSetText(_:))
+        self.replaceSelector(from: originalSelector, to: swizzledSelector)
         
-        let didAddMethod = class_addMethod(self, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod))
+        originalSelector = #selector(UILabel.awakeFromNib)
+        swizzledSelector = #selector(UILabel.customAwakeFromNib)
+        self.replaceSelector(from: originalSelector, to: swizzledSelector)
         
-        if didAddMethod {
-            class_replaceMethod(self, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod))
-        } else {
-            method_exchangeImplementations(originalMethod, swizzledMethod)
-        }
+        originalSelector = #selector(UILabel.didMoveToWindow)
+        swizzledSelector = #selector(UILabel.customDidMoveToWindow)
+        self.replaceSelector(from: originalSelector, to: swizzledSelector)
     }
     
-    open override func awakeFromNib() {
-        super.awakeFromNib()
-        
+    func customAwakeFromNib() {
+        self.customAwakeFromNib()
         textKey = self.text
         if let att = self.attributedText{
             let attribue = NSMutableAttributedString(string: att.string.localize())
@@ -56,16 +58,24 @@ public extension UILabel {
         }
     }
     
-    open override func didMoveToWindow() {
+    func customDidMoveToWindow() {
+        self.customDidMoveToWindow()
         if let key = self.textKey {
             self.text = key
         } else if let t = self.text , !t.isEmpty , t != t.localize() {
             self.text = t
         }
     }
-    
-    func customSetText(_ input: String?) {
+
+    @objc func customSetText(_ input: String?) {
+        
         if let t = input {
+            if t.isEmpty{
+                self.textKey = nil
+                self.customSetText("")
+                return
+            }
+            
             let local = t.localize()
             self.textKey = t
             let needResize = (local != self.text && self.text != nil && local != t && self.textKey != nil && self.constraints.count == 0)
@@ -80,3 +90,4 @@ public extension UILabel {
         }
     }
 }
+

@@ -28,13 +28,17 @@ open class MMLocalization: NSObject {
     
     static let shared = MMLocalization()
     
-    open static func set(type:TableType) {
+    public static func start() {
+        UILabel.replaceSetText()
+        UINavigationItem.replaceSetText()
+    }
+
+    public static func set(type:TableType) {
         MMLocalization.shared.type = type
     }
     
-    open static func loadSetting() -> Bool {
+    public static func loadSetting() -> Bool {
         if let tableName = UserDefaults.standard.value(forKey: TableName) as? String{
-        
             MMLocalization.shared.type = .custom(tableName: tableName)
             return true
         }

@@ -11,7 +11,7 @@
 		4DDA15296306975A9214E592D5AECC40 /* MMLocalization-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A0727757834C7C3BFF4615D332ADA9B9 /* MMLocalization-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		52C544CD1C76C82EA9999561EC419640 /* MMLocalization-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6CC848FF8411D5477472A7AD2B5548 /* MMLocalization-dummy.m */; };
 		5E1BEF451E9F898A00789EC5 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1BEF441E9F898A00789EC5 /* StringExtension.swift */; };
-		5E7696C51EA9A79A00D670BF /* UIApplication+Load.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7696C41EA9A79A00D670BF /* UIApplication+Load.swift */; };
+		5E8E1F481F74B3DA00C9FB61 /* MMLocalization+Replace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8E1F471F74B3DA00C9FB61 /* MMLocalization+Replace.swift */; };
 		5EAA9C3C1EA90D4400702EB3 /* UILabel+Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAA9C3A1EA90D4400702EB3 /* UILabel+Localize.swift */; };
 		5EAA9C3D1EA90D4400702EB3 /* UINavigationItem+Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAA9C3B1EA90D4400702EB3 /* UINavigationItem+Localize.swift */; };
 		6FAE18B7FA4949F0E61C43D6271BD38D /* Pods-MMLocalization_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB345BBBBC0B2CBD620149F00B4E25F /* Pods-MMLocalization_Example-dummy.m */; };
@@ -39,7 +39,7 @@
 		4C482E6026A1108DB8D9F6A3E80D98C1 /* Pods-MMLocalization_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MMLocalization_Example.modulemap"; sourceTree = "<group>"; };
 		534A0EC1945F02573AA9EC003795BE69 /* Pods-MMLocalization_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MMLocalization_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		5E1BEF441E9F898A00789EC5 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
-		5E7696C41EA9A79A00D670BF /* UIApplication+Load.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Load.swift"; sourceTree = "<group>"; };
+		5E8E1F471F74B3DA00C9FB61 /* MMLocalization+Replace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MMLocalization+Replace.swift"; sourceTree = "<group>"; };
 		5EAA9C3A1EA90D4400702EB3 /* UILabel+Localize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Localize.swift"; sourceTree = "<group>"; };
 		5EAA9C3B1EA90D4400702EB3 /* UINavigationItem+Localize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationItem+Localize.swift"; sourceTree = "<group>"; };
 		608280EB8AF78EC3B678E54F3F6A11F4 /* MMLocalization.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MMLocalization.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,7 +162,7 @@
 				5EAA9C3B1EA90D4400702EB3 /* UINavigationItem+Localize.swift */,
 				C4242603B18E0FFD36AD526E15D78699 /* MMLocalization.swift */,
 				5E1BEF441E9F898A00789EC5 /* StringExtension.swift */,
-				5E7696C41EA9A79A00D670BF /* UIApplication+Load.swift */,
+				5E8E1F471F74B3DA00C9FB61 /* MMLocalization+Replace.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -299,10 +299,10 @@
 			files = (
 				5E1BEF451E9F898A00789EC5 /* StringExtension.swift in Sources */,
 				5EAA9C3C1EA90D4400702EB3 /* UILabel+Localize.swift in Sources */,
-				5E7696C51EA9A79A00D670BF /* UIApplication+Load.swift in Sources */,
 				5EAA9C3D1EA90D4400702EB3 /* UINavigationItem+Localize.swift in Sources */,
 				52C544CD1C76C82EA9999561EC419640 /* MMLocalization-dummy.m in Sources */,
 				0817C05512A02E0AC79C1A48FD7FB744 /* MMLocalization.swift in Sources */,
+				5E8E1F481F74B3DA00C9FB61 /* MMLocalization+Replace.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
