@@ -15,7 +15,7 @@ extension UINavigationItem {
         self.replaceSelector(from: originalSelector, to: swizzledSelector)
     }
     
-    func itemTitle(_ input: String?) {
+    @objc func itemTitle(_ input: String?) {
         if let t = input {
             self.itemTitle(t.localize())
         }

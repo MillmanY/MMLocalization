@@ -41,7 +41,7 @@ extension UILabel {
         self.replaceSelector(from: originalSelector, to: swizzledSelector)
     }
     
-    func customAwakeFromNib() {
+    @objc func customAwakeFromNib() {
         self.customAwakeFromNib()
         textKey = self.text
         if let att = self.attributedText{
@@ -58,7 +58,7 @@ extension UILabel {
         }
     }
     
-    func customDidMoveToWindow() {
+    @objc func customDidMoveToWindow() {
         self.customDidMoveToWindow()
         if let key = self.textKey {
             self.text = key
