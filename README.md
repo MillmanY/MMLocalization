@@ -27,8 +27,16 @@ https://github.com/MillmanY/Localize-String-Help
 
 2.Setting your string table at didFinishLaunchingWithOptions
 
-![circledemo](https://github.com/MillmanY/MMLocalization/blob/master/setting.png)
-
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions:     [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        // Override point for customization after application launch.
+        MMLocalization.start()
+        let scuess =  MMLocalization.loadSetting()
+        if !scuess {
+            MMLocalization.set(type: .custom(tableName: "ILocalizable_CH"))
+        }
+        return true
+    }
+    
 3.Just setting your key on your UI
 
 ![circledemo](https://github.com/MillmanY/MMLocalization/blob/master/ui.png)
