@@ -16,7 +16,7 @@ extension UIButton {
         self.replaceSelector(from: from, to: to)
     }
     
-    func customIntrinsicContentSize() -> CGSize {
+    @objc func customIntrinsicContentSize() -> CGSize {
         if let classType = NSClassFromString("_UIModernBarButton"),
                self.isKind(of: classType) == true {
             guard let buttonClass = NSClassFromString("UIButtonLabel") else {
