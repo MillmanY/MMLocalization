@@ -68,25 +68,26 @@ extension UILabel {
     }
 
     @objc func customSetText(_ input: String?) {
+   
+        guard let t = input else {
+            self.textKey = nil
+            self.customSetText(nil)
+            return
+        }
         
-        if let t = input {
-            if t.isEmpty{
-                self.textKey = nil
-                self.customSetText("")
-                return
-            }
-            
-            let local = t.localize()
+        let local = t.localize()
+        if local == self.text {
+            return
+        } else if t.isEmpty {
+            self.textKey = nil
+            self.customSetText("")
+        } else {
             self.textKey = t
-            let needResize = (local != self.text && self.text != nil && local != t && self.textKey != nil && self.constraints.count == 0)
+            let needResize = (local != self.text && local != t && self.textKey != nil && self.constraints.count == 0)
             self.customSetText(local)
-            
             if needResize {
                 self.sizeToFit()
             }
-        } else if input == nil && self.text != nil{
-            self.textKey = nil
-            self.customSetText(nil)
         }
     }
 }
