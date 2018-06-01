@@ -15,7 +15,7 @@ public extension String {
         case .system:
             let local = NSLocalizedString(self, comment: "")
             if arg.count > 0 {
-                return String(format: local, arg)
+                return String(format: local,arguments: arg)
             } else {
                 return local
             }
