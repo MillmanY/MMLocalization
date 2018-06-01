@@ -12,8 +12,9 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // Arguement demo
+        let a = "arg_demo".localize(arg: "10",2)
     }
     
     override func viewWillAppear(_ animated: Bool) {

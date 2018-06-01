@@ -44,7 +44,7 @@ extension UILabel {
     @objc func customAwakeFromNib() {
         self.customAwakeFromNib()
         textKey = self.text
-        if let att = self.attributedText{
+        if let att = self.attributedText, !att.string.isEmpty {
             let attribue = NSMutableAttributedString(string: att.string.localize())
             let length = (attribue.length < att.length) ? attribue.length :att.length
             att.enumerateAttributes(in: NSMakeRange(0, length), options: .longestEffectiveRangeNotRequired, using: { (obj, range, stop) in
@@ -52,10 +52,10 @@ extension UILabel {
                 attribue.addAttributes(obj, range: range)
             })
             self.attributedText = attribue
-        } else {
-            let t = self.text
-            self.text = (t)
+        } else if let t = self.text, !t.isEmpty {
+            self.text = t
         }
+
     }
     
     @objc func customDidMoveToWindow() {

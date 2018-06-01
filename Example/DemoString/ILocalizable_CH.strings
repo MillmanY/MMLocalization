@@ -4,3 +4,4 @@
 "account" = "帳號";
 "password" = "密碼";
 "confirm" = "確認";
+"arg_demo" = "my name is %@, I'm %d years old";
