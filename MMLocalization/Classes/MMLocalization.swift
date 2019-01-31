@@ -31,6 +31,7 @@ open class MMLocalization: NSObject {
     public static func start() {
         UILabel.replaceSetText()
         UINavigationItem.replaceSetText()
+        UIButton.replaceSetText()
         UIButton.replaceSizeMethod()
     }
 

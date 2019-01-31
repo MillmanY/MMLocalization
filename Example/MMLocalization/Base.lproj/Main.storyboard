@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2Ms-6u-RcF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2Ms-6u-RcF">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -46,10 +45,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GqQ-nI-2vH">
-                                <rect key="frame" x="26" y="277" width="323" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GqQ-nI-2vH">
+                                <rect key="frame" x="114" y="277" width="147" height="44"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="confirm">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="UfH-p5-EY9"/>
+                                </constraints>
+                                <state key="normal" title="confirm_testtest" image="close">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
@@ -82,7 +84,6 @@
                             <constraint firstItem="R5j-vs-Wdl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="sR5-Qu-gnP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="R5j-vs-Wdl" secondAttribute="trailing" constant="10" id="uJO-NH-dwV"/>
                             <constraint firstItem="yBt-IT-ZIb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="xVH-bh-SUf"/>
-                            <constraint firstItem="GqQ-nI-2vH" firstAttribute="width" secondItem="OSc-lE-3Mv" secondAttribute="width" id="zfb-Rb-K9V"/>
                             <constraint firstItem="R5j-vs-Wdl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="ztZ-GN-Bdl"/>
                         </constraints>
                         <variation key="default">
@@ -105,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="236" y="251"/>
+            <point key="canvasLocation" x="236" y="250.52473763118442"/>
         </scene>
         <!--Choose Language Table View Controller-->
         <scene sceneID="9WW-Ie-q0G">
@@ -195,4 +196,7 @@
             <point key="canvasLocation" x="938.39999999999998" y="250.52473763118442"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="close" width="15" height="14"/>
+    </resources>
 </document>

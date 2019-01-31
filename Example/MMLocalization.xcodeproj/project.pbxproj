@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		276868D92202A1760066842F /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 276868D82202A1760066842F /* Image.xcassets */; };
 		27A537191D61FEAA00A174BF /* ILocalizable_CH.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27A537171D61FEAA00A174BF /* ILocalizable_CH.strings */; };
 		27A5371A1D61FEAA00A174BF /* ILocalizable_EN.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27A537181D61FEAA00A174BF /* ILocalizable_EN.strings */; };
 		27A5371C1D61FECC00A174BF /* ChooseLanguageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A5371B1D61FECC00A174BF /* ChooseLanguageTableViewController.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		276868D82202A1760066842F /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
 		27A537171D61FEAA00A174BF /* ILocalizable_CH.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = ILocalizable_CH.strings; sourceTree = "<group>"; };
 		27A537181D61FEAA00A174BF /* ILocalizable_EN.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = ILocalizable_EN.strings; sourceTree = "<group>"; };
 		27A5371B1D61FECC00A174BF /* ChooseLanguageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseLanguageTableViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				276868D82202A1760066842F /* Image.xcassets */,
 				27A537161D61FEAA00A174BF /* DemoString */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for MMLocalization */,
@@ -268,6 +271,7 @@
 				27A537191D61FEAA00A174BF /* ILocalizable_CH.strings in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				276868D92202A1760066842F /* Image.xcassets in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 				27A5371A1D61FEAA00A174BF /* ILocalizable_EN.strings in Resources */,
 			);
@@ -483,7 +487,7 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -497,7 +501,7 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
