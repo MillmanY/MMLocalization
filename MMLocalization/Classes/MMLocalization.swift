@@ -10,6 +10,7 @@ import UIKit
 let TableName = "LocalizationTable"
 public enum TableType {
     case system
+    case systemWith(lproj: String)
     case custom(tableName:String)
 }
 
