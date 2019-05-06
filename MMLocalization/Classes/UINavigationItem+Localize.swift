@@ -7,17 +7,43 @@
 //
 
 import UIKit
+private var titleTextKey = "UINavigationItem+Text+Key"
 extension UINavigationItem {
 
+    private var textKey: String? {
+        set {
+            objc_setAssociatedObject(self, &titleTextKey, newValue, .OBJC_ASSOCIATION_RETAIN)
+        } get {
+            guard let key = objc_getAssociatedObject(self, &titleTextKey) as? String else {
+                return nil
+            }
+            return key
+        }
+    }
+    
     static func replaceSetText(){
-        let originalSelector = #selector(setter: UINavigationItem.title)
-        let swizzledSelector = #selector(UINavigationItem.itemTitle(_:))
+        var originalSelector = #selector(setter: UINavigationItem.title)
+        var swizzledSelector = #selector(UINavigationItem.itemTitle(_:))
         self.replaceSelector(from: originalSelector, to: swizzledSelector)
+        
+        originalSelector = #selector(getter: UINavigationItem.title)
+        swizzledSelector = #selector(UINavigationItem.getItemTitle)
+        self.replaceSelector(from: originalSelector, to: swizzledSelector)
+    }
+    
+    @objc func getItemTitle() -> String? {
+        return self.textKey
     }
     
     @objc func itemTitle(_ input: String?) {
         if let t = input {
-            self.itemTitle(t.localize())
+            let local = t.localize()
+            if local != t {
+                self.textKey = t
+            }
+            self.itemTitle(local)
+        } else {
+            self.textKey = nil
         }
     }
 }

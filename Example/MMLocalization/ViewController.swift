@@ -12,13 +12,13 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationItem.title = "log_in"
+
         // Arguement demo
         let a = "arg_demo".localize(arg: "10",2)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.title = "log_in"
     }
     @IBAction func chooseLanguage() {
         self.performSegue(withIdentifier: "SelectLanguage", sender: nil)

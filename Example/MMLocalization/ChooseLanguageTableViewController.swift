@@ -39,7 +39,6 @@ class ChooseLanguageTableViewController: UITableViewController {
             default: break
         }
         MMLocalization.set(type: .custom(tableName: string))
-        
         self.navigationController?.popViewController(animated: true)
 
     }

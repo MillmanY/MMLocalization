@@ -14,7 +14,6 @@ extension UILabel {
                 let key = (new != new.localize() ) ? new : nil
                 objc_setAssociatedObject(self, &originalKey, key, .OBJC_ASSOCIATION_RETAIN)
             }
-            
             if newValue == nil {
                 objc_setAssociatedObject(self, &originalKey, nil, .OBJC_ASSOCIATION_RETAIN)
             }
@@ -55,7 +54,6 @@ extension UILabel {
         } else if let t = self.text, !t.isEmpty {
             self.text = t
         }
-
     }
     
     @objc func customDidMoveToWindow() {
@@ -68,7 +66,6 @@ extension UILabel {
     }
 
     @objc func customSetText(_ input: String?) {
-   
         guard let t = input else {
             self.textKey = nil
             self.customSetText(nil)

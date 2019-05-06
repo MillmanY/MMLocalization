@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MMLocalization'
-  s.version          = '3.0'
+  s.version          = '5.0'
   s.summary          = 'Localization UI easily'
 
 # This description is used to generate tags and improve search results.
@@ -30,11 +30,5 @@ Pod::Spec.new do |s|
 
   s.source_files = 'MMLocalization/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'MMLocalization' => ['MMLocalization/Assets/*.png']
-  # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
