@@ -16,7 +16,7 @@ class ViewController: UIViewController {
                                                   .font: UIFont.systemFont(ofSize: 17)]
 
         self.navigationItem.title = "log_in"
-
+        
         // Arguement demo
         let a = "arg_demo".localize(arg: "10",2)
     }

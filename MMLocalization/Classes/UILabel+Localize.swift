@@ -25,7 +25,7 @@ extension UILabel {
             }
         }
     }
-    
+
     static func replaceSetText(){
         var originalSelector = #selector(setter: UILabel.text)
         var swizzledSelector = #selector(UILabel.customSetText(_:))
