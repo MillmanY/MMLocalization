@@ -10,7 +10,7 @@ import Foundation
 
 public extension String {
     
-    public func localize(arg: CVarArg...) -> String {
+    func localize(arg: CVarArg...) -> String {
         switch MMLocalization.shared.type {
         case .system:
             let local = NSLocalizedString(self, comment: "")
@@ -29,7 +29,7 @@ public extension String {
         }
     }
     
-    public func localize(table:String) -> String {
+    func localize(table:String) -> String {
         return self.localizeWith(value: self, table: table)
     }
     
