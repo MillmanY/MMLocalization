@@ -32,7 +32,7 @@ extension UINavigationItem {
     }
     
     @objc func getItemTitle() -> String? {
-        return self.textKey
+        return self.textKey?.localize()
     }
     
     @objc func itemTitle(_ input: String?) {
@@ -47,3 +47,4 @@ extension UINavigationItem {
         }
     }
 }
+

@@ -1,31 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2Ms-6u-RcF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8Uu-nW-ZHt">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--welcome-->
         <scene sceneID="1HM-s0-44T">
             <objects>
                 <navigationController storyboardIdentifier="Root" id="2Ms-6u-RcF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="welcome" id="CAR-lL-Fv7"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="a3s-4H-OlV">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="nTA-7z-1Aw"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ddJ-VT-kh3"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fdE-u6-yMZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-455" y="251"/>
+            <point key="canvasLocation" x="-297" y="-275"/>
         </scene>
-        <!--View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="Qqr-Vf-pkD">
+            <objects>
+                <tabBarController id="8Uu-nW-ZHt" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="HtQ-xM-8ok"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rqj-JC-etr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="2Ms-6u-RcF" kind="relationship" relationship="viewControllers" id="QbB-oI-Pl2"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ug9-Hd-dNL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1114" y="-61"/>
+        </scene>
+        <!--welcome-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MMLocalization_Example" customModuleProvider="target" sceneMemberID="viewController">
@@ -93,6 +112,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <tabBarItem key="tabBarItem" title="welcome" id="yiH-Bj-W5p"/>
                     <navigationItem key="navigationItem" id="cms-ag-DxA">
                         <barButtonItem key="rightBarButtonItem" title="choose_language" style="done" id="BlC-MS-AYg" customClass="CustomBar" customModule="MMLocalization_Example" customModuleProvider="target">
                             <connections>
@@ -106,12 +126,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="236" y="250.52473763118442"/>
+            <point key="canvasLocation" x="374" y="-275"/>
         </scene>
         <!--Choose Language Table View Controller-->
         <scene sceneID="9WW-Ie-q0G">
             <objects>
-                <tableViewController id="EbZ-oc-aex" customClass="ChooseLanguageTableViewController" customModule="MMLocalization_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="EbZ-oc-aex" customClass="ChooseLanguageTableViewController" customModule="MMLocalization_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="gQh-3c-nfL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -193,7 +213,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vox-ql-9gS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="938.39999999999998" y="250.52473763118442"/>
+            <point key="canvasLocation" x="1159" y="-18"/>
         </scene>
     </scenes>
     <resources>

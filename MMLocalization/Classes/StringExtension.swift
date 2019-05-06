@@ -15,7 +15,7 @@ public extension String {
         case .systemWith(let lproj):
             guard let path = Bundle.main.path(forResource: lproj, ofType: "lproj"),
                 let bundle = Bundle(path: path) else {
-                    return ""
+                    return self
             }
             let local = NSLocalizedString(self, tableName: nil, bundle: bundle, value: "", comment: "")
             return self.combine(value: local, arg: arg)
@@ -30,7 +30,7 @@ public extension String {
     
     func combine(value: String, arg: CVarArg...) -> String {
         if self.isEmpty {
-            return ""
+            return self
         } else if arg.count > 0 {
             return String(format: value,arguments: arg)
         } else {

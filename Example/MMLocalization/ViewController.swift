@@ -12,6 +12,9 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.blue,
+                                                  .font: UIFont.systemFont(ofSize: 17)]
+
         self.navigationItem.title = "log_in"
 
         // Arguement demo
