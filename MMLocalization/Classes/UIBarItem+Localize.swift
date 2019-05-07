@@ -28,7 +28,7 @@ extension UITabBar {
         self.reloadWithLocalize()
     }
     
-    public func reloadWithLocalize() {
+    func reloadWithLocalize() {
         self.items?.forEach({ (item) in
             let title = item.title
             if let local = title?.localize(), local != title {

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MMLocalization'
-  s.version          = '5.0.4'
+  s.version          = '5.0.5'
   s.summary          = 'Localization UI easily'
 
 # This description is used to generate tags and improve search results.

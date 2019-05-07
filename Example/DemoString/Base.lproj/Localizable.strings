@@ -13,3 +13,4 @@
 "password" = "kata sandi";
 "confirm_testtest" = "konfirmasi";
 
+"arg_demo" = "my name is %@, I'm %d years old";

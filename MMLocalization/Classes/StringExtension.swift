@@ -28,7 +28,7 @@ public extension String {
         }
     }
     
-    func combine(value: String, arg: CVarArg...) -> String {
+    func combine(value: String, arg: [CVarArg]) -> String {
         if self.isEmpty {
             return self
         } else if arg.count > 0 {
