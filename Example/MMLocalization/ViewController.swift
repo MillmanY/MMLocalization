@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.blue,
                                                   .font: UIFont.systemFont(ofSize: 17)]
 
-        self.navigationItem.title = "log_in"
+        self.title = "log_in".localize(arg: "123")
         
         // Arguement demo
         let a = "arg_demo".localize(arg: "10",2)

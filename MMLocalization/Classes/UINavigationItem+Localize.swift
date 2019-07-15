@@ -38,9 +38,7 @@ extension UINavigationItem {
     @objc func itemTitle(_ input: String?) {
         if let t = input {
             let local = t.localize()
-            if local != t {
-                self.textKey = t
-            }
+            self.textKey = t
             self.itemTitle(local)
         } else {
             self.textKey = nil

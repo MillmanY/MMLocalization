@@ -8,7 +8,7 @@
 
 "welcome" = "welcome Here";
 "choose_language" = "choose language";
-"log_in" = "log in";
+"log_in" = "log in %@";
 "account" = "Account";
 "password" = "Password";
 "confirm_testtest" = "Confirm--";
