@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0817C05512A02E0AC79C1A48FD7FB744 /* MMLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4242603B18E0FFD36AD526E15D78699 /* MMLocalization.swift */; };
-		276868D52202A0B30066842F /* UIButton+Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276868D42202A0B30066842F /* UIButton+Localize.swift */; };
+		27815D7F23714F0900E7CA2E /* String+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27815D7E23714F0900E7CA2E /* String+Size.swift */; };
 		27C5548622800AF3000ED171 /* UIBarItem+Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C5548522800AF3000ED171 /* UIBarItem+Localize.swift */; };
 		4DDA15296306975A9214E592D5AECC40 /* MMLocalization-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A0727757834C7C3BFF4615D332ADA9B9 /* MMLocalization-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		52C544CD1C76C82EA9999561EC419640 /* MMLocalization-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6CC848FF8411D5477472A7AD2B5548 /* MMLocalization-dummy.m */; };
@@ -34,7 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		276868D42202A0B30066842F /* UIButton+Localize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Localize.swift"; sourceTree = "<group>"; };
+		27815D7E23714F0900E7CA2E /* String+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Size.swift"; sourceTree = "<group>"; };
 		27C5548522800AF3000ED171 /* UIBarItem+Localize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarItem+Localize.swift"; sourceTree = "<group>"; };
 		280457D8B72DB48AB681E99699F1301F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		311538A1EF78A24DED19DBFE6D00F138 /* Pods-MMLocalization_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MMLocalization_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -165,13 +165,13 @@
 			isa = PBXGroup;
 			children = (
 				5E2931921F984E9E0084CEBD /* UIButton+IntrinsicContentSize.swift */,
-				276868D42202A0B30066842F /* UIButton+Localize.swift */,
 				5EAA9C3A1EA90D4400702EB3 /* UILabel+Localize.swift */,
 				27C5548522800AF3000ED171 /* UIBarItem+Localize.swift */,
 				5EAA9C3B1EA90D4400702EB3 /* UINavigationItem+Localize.swift */,
 				C4242603B18E0FFD36AD526E15D78699 /* MMLocalization.swift */,
 				5E1BEF441E9F898A00789EC5 /* StringExtension.swift */,
 				5E8E1F471F74B3DA00C9FB61 /* MMLocalization+Replace.swift */,
+				27815D7E23714F0900E7CA2E /* String+Size.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -308,8 +308,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E1BEF451E9F898A00789EC5 /* StringExtension.swift in Sources */,
+				27815D7F23714F0900E7CA2E /* String+Size.swift in Sources */,
 				5E2931931F984E9E0084CEBD /* UIButton+IntrinsicContentSize.swift in Sources */,
-				276868D52202A0B30066842F /* UIButton+Localize.swift in Sources */,
 				27C5548622800AF3000ED171 /* UIBarItem+Localize.swift in Sources */,
 				5EAA9C3C1EA90D4400702EB3 /* UILabel+Localize.swift in Sources */,
 				5EAA9C3D1EA90D4400702EB3 /* UINavigationItem+Localize.swift in Sources */,

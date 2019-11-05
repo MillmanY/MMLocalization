@@ -8,7 +8,7 @@ private var originalKey = "TextKey"
 private var defaultValue = ["Label",""]
 extension UILabel {
     
-    fileprivate var textKey:String? {
+    var textKey:String? {
         set {
             if let new = newValue , !defaultValue.contains(new)   {
                 let key = (new != new.localize() ) ? new : nil
