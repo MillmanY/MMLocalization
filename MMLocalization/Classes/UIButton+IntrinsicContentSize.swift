@@ -24,17 +24,7 @@ extension UIButton {
             }
             let view = self.subviews.first(where: { $0.isKind(of: buttonClass) == true })
             return view?.sizeThatFits(.zero) ?? self.customIntrinsicContentSize()
-        } else if let key = self.titleLabel?.textKey, let titleLab = self.titleLabel {
-            let currentW = titleLab.frame.width
-            let keyW = key.calWidthWith(height: titleLab.frame.height, font: self.titleLabel?.font)
-            var will = self.customIntrinsicContentSize()
-            let willW = will.width-(keyW-currentW)
-            if willW > 0 {
-                will.width = willW
-            }
-            return will
         }
-        
         return self.customIntrinsicContentSize()
     }
     

@@ -34,6 +34,7 @@ open class MMLocalization: NSObject {
         UINavigationItem.replaceSetText()
         UIButton.replaceSizeMethod()
         UITabBar.replaceSetText()
+        UIButton.replaceSetText()
     }
 
     public static func set(type:TableType) {
