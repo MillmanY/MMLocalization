@@ -28,9 +28,28 @@ extension UIButton {
     }
 
     static func replaceSetText(){
-        let originalSelector = #selector(UIButton.didMoveToWindow)
-        let swizzledSelector = #selector(UIButton.customDidMoveToWindow)
+        var originalSelector = #selector(UIButton.didMoveToWindow)
+        var swizzledSelector = #selector(UIButton.customDidMoveToWindow)
         self.replaceSelector(from: originalSelector, to: swizzledSelector)
+        
+        
+        originalSelector = #selector(UIButton.setTitle(_:for:))
+        swizzledSelector = #selector(UIButton.customSetTitle(_:for:))
+        self.replaceSelector(from: originalSelector, to: swizzledSelector)
+        
+    }
+    
+    @objc func customSetTitle(_ title: String?, for state: UIControl.State) {
+        if let t = title {
+            let local = t.localize()
+            if local != t {
+                self.textKey = t
+            }
+            self.customSetTitle(local, for: state)
+        } else {
+            self.textKey = nil
+            self.customSetTitle(nil, for: state)
+        }
     }
     
     @objc func customDidMoveToWindow() {
